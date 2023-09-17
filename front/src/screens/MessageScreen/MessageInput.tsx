@@ -10,14 +10,16 @@ export default function MessageInput() {
 
 const styles = StyleSheet.create({
   messageContainer: {
-    width: "95%",
-    backgroundColor: "#FFFFFF",
+    flex: 10,
+    backgroundColor: "white",
     borderRadius: 15,
-    marginBottom: 10,
+    marginStart: 10,
   },
   messageInput: {
     height: 33,
+    borderColor: "grey",
+    borderWidth: 2,
     borderRadius: 50,
-    padding: 2,
+    paddingHorizontal: 10,
   },
 });
