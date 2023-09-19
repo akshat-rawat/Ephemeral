@@ -5,7 +5,7 @@ import { setupChatSocket } from "./sockets/chatSocket";
 
 const app: Express = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, { cors: { origin: true } }); // Change to URL for prod
 const port = 3001;
 
 app.get("/", (req: Request, res: Response) => {
@@ -14,6 +14,6 @@ app.get("/", (req: Request, res: Response) => {
 
 setupChatSocket(io);
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
