@@ -36,6 +36,4 @@ class SocketService {
   }
 }
 
-const socketManager = SocketService.getInstance();
-
-export default socketManager;
+export default SocketService.getInstance();
