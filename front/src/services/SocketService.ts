@@ -1,4 +1,5 @@
 import { io, Socket } from "socket.io-client";
+import eventBus from "../utils/EventBus";
 
 class SocketService {
   private socket: Socket | null = null;
@@ -23,7 +24,7 @@ class SocketService {
 
   private setupSocketListeners() {
     this.socket?.on("message", (data: string) => {
-      console.log(data);
+      eventBus.emit("messageReceived", data);
     });
   }
 
